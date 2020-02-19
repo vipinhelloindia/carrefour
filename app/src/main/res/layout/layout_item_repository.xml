@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/card_view_horizontal_margin"
+    android:layout_marginTop="@dimen/card_view_vertical_margin"
+    android:layout_marginRight="@dimen/card_view_horizontal_margin"
+    android:layout_marginBottom="@dimen/card_view_vertical_margin"
+    android:background="@color/cardview_light_background"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="@dimen/card_view_corner_radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_normal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_user_avatar"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_repo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="OpenHub"
+            app:layout_constraintEnd_toStartOf="@id/tv_language"
+            app:layout_constrainedWidth="true"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintStart_toEndOf="@id/iv_user_avatar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_repo_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="4"
+            android:text="The hardest part of the Prototype pattern.2.he hardest part of the Prototype pattern The hardest part of the Prototype pattern.2.he hardest part of the Prototype pattern"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_repo_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_repo_name" />
+
+        <TextView
+            android:id="@+id/tv_updated_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 March"
+            app:layout_constraintStart_toStartOf="@id/tv_repo_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_repo_description"
+            tools:layout_editor_absoluteY="27dp" />
+
+        <TextView
+            android:id="@+id/tv_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/text_mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Java" />
+
+
+        <TextView
+            android:id="@+id/tv_star_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_menu_star"
+            android:drawablePadding="2dp"
+            android:gravity="center_vertical"
+            android:text="1123"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/text_mini"
+            app:layout_constraintEnd_toStartOf="@+id/tv_fork_num"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/tv_repo_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_updated_date"
+            app:layout_constraintWidth_percent="0.15" />
+
+
+        <TextView
+            android:id="@+id/tv_fork_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_fork"
+            android:drawablePadding="2dp"
+            android:gravity="center_vertical"
+            android:text="1123"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/text_mini"
+            app:layout_constraintEnd_toStartOf="@+id/tv_owner_name"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_star_num"
+            app:layout_constraintTop_toBottomOf="@id/tv_updated_date"
+            app:layout_constraintWidth_percent="0.15" />
+
+
+        <TextView
+            android:id="@+id/tv_owner_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_menu_person"
+            android:drawablePadding="2dp"
+            android:gravity="center_vertical"
+            android:text="owner f"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/text_mini"
+            app:layout_constraintEnd_toStartOf="@+id/tv_fork_owner"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_fork_num"
+            app:layout_constraintTop_toBottomOf="@id/tv_updated_date"
+            app:layout_constraintWidth_percent="0.4" />
+
+
+        <TextView
+            android:id="@+id/tv_fork_owner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_fork"
+            android:drawablePadding="2dp"
+            android:gravity="center_vertical"
+            android:text="@string/fork_tag"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/text_mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_owner_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_updated_date"
+            app:layout_constraintWidth_percent="0.3" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

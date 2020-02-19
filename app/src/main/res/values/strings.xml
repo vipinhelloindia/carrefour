@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Github</string>
+    <string name="fork_tag">Fork</string>
+</resources>
